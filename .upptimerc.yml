@@ -16,7 +16,10 @@ status-website:
   name: CECG Status
   introTitle: CECG Status
   introMessage: Real-time status for CECG core platform applications.
-  theme: dark
+  theme: light
+  logoUrl: https://raw.githubusercontent.com/coreeng/cecg-status/master/assets/logo.png
+  themeUrl: https://raw.githubusercontent.com/coreeng/cecg-status/master/assets/brand.css
+  customHeadHtml: '<link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/coreeng/cecg-status/master/assets/favicon.ico">'
   navbar:
     - title: Status
       href: /
