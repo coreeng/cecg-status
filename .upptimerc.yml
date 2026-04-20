@@ -19,7 +19,7 @@ status-website:
   theme: light
   logoUrl: https://raw.githubusercontent.com/coreeng/cecg-status/master/assets/logo.png
   themeUrl: https://raw.githubusercontent.com/coreeng/cecg-status/master/assets/brand.css
-  customHeadHtml: '<link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/coreeng/cecg-status/master/assets/favicon.ico">'
+  favicon: https://raw.githubusercontent.com/coreeng/cecg-status/master/assets/favicon.png
   navbar:
     - title: Status
       href: /

@@ -65,10 +65,25 @@ nav {
   box-shadow: none;
 }
 
-/* Logo sizing — CECG wordmark is wide (4312x772) so cap height for readable scale */
-nav img {
-  max-height: 28px;
-  width: auto;
+/*
+ * Logo + title overrides. Svelte scoped styles beat plain selectors,
+ * so these use !important to reliably override.
+ */
+nav .logo img {
+  max-height: 22px !important;
+  width: auto !important;
+}
+
+/* Hide the "CECG Status" text in the navbar — the logo already brands the page,
+   and the H1 "CECG Status" below the navbar carries the page title. */
+nav .logo > div {
+  display: none !important;
+}
+
+/* Force the CECG primary blue on the active nav item underline.
+   The upstream Svelte component hardcodes black on this border, so override. */
+nav a[aria-current="page"] {
+  border-bottom-color: #2563eb !important;
 }
 
 /* Subtle elevation on cards to match CECG's flat shadcn look */
