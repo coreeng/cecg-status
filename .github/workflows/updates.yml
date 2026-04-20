@@ -26,12 +26,18 @@ jobs:
     name: Deploy updates
     runs-on: ubuntu-latest
     steps:
+      - name: Generate GitHub App token
+        id: app_token
+        uses: tibdex/github-app-token@v2
+        with:
+          app_id: ${{ secrets.GH_APP_ID }}
+          private_key: ${{ secrets.GH_APP_PRIVATE_KEY }}
       - name: Checkout
         uses: actions/checkout@v4
         with:
           ref: ${{ github.head_ref }}
-          token: ${{ secrets.GH_PAT || github.token }}
+          token: ${{ steps.app_token.outputs.token }}
       - name: Update code
         uses: upptime/updates@master
         env:
-          GH_PAT: ${{ secrets.GH_PAT || github.token }}
+          GH_PAT: ${{ steps.app_token.outputs.token }}
