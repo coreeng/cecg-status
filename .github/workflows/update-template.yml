@@ -16,10 +16,11 @@
 
 name: Update Template CI
 on:
+  schedule:
+    - cron: "0 0 * * *"
+  repository_dispatch:
+    types: [update_template]
   workflow_dispatch:
-# Schedule intentionally removed — we manage Upptime upgrades manually
-# so that workflow-level GitHub App auth edits are not overwritten.
-# Run this workflow via the Actions UI when you want to pull in an Upptime upgrade.
 jobs:
   release:
     name: Build
