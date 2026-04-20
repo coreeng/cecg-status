@@ -70,8 +70,10 @@ nav {
  * so these use !important to reliably override.
  */
 nav .logo img {
+  height: 22px !important;
   max-height: 22px !important;
   width: auto !important;
+  margin-right: 0 !important;
 }
 
 /* Hide the "CECG Status" text in the navbar — the logo already brands the page,

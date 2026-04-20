@@ -17,9 +17,12 @@ status-website:
   introTitle: CECG Status
   introMessage: Real-time status for CECG core platform applications.
   theme: light
-  logoUrl: https://raw.githubusercontent.com/coreeng/cecg-status/master/assets/logo.png
-  themeUrl: https://raw.githubusercontent.com/coreeng/cecg-status/master/assets/brand.css
-  favicon: https://raw.githubusercontent.com/coreeng/cecg-status/master/assets/favicon.png
+  # Assets are served via jsdelivr (not raw.githubusercontent.com) because
+  # raw serves .css as text/plain + nosniff, which browsers refuse to apply
+  # as stylesheets. jsdelivr proxies GitHub with correct MIME types.
+  logoUrl: https://cdn.jsdelivr.net/gh/coreeng/cecg-status@master/assets/logo.png
+  themeUrl: https://cdn.jsdelivr.net/gh/coreeng/cecg-status@master/assets/brand.css
+  favicon: https://cdn.jsdelivr.net/gh/coreeng/cecg-status@master/assets/favicon.png
   navbar:
     - title: Status
       href: /
